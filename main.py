@@ -26,7 +26,7 @@ ImageLabel.image = DadoImagen
 ImageLabel.pack(expand=True)
 ##Funciones
 
-def girar_dado():
+def girar_dado(event=None):
     #simulando el numero de imagen
     DadoImagen = ImageTk.PhotoImage(Image.open(rn.choice(dado)))
     # construir label para la imagen
@@ -36,5 +36,8 @@ def girar_dado():
 ##Insertar boton
 boton_girar = tk.Button(root,text='Girar dado!',command=girar_dado)
 boton_girar.pack(expand=True)
+
+##Eventos
+root.bind('<Return>', girar_dado)
 
 root.mainloop()
